@@ -1,0 +1,19 @@
+name = "User"
+uuid = "51b0b30e-0773-4eae-988a-eeae6d3ef789"
+authors = ["Five Grant <5@fivegrant.com>"]
+version = "0.1.0"
+
+[deps]
+CodeTracking = "da1fd8a2-8d9e-5ec2-8556-3022fb5608a2"
+Debugger = "31a5f54b-26ea-5ae9-a837-f05ce5417438"
+DefaultApplication = "3f0dd361-4fe0-5fc6-8523-80b14ec94d85"
+Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
+ImageInTerminal = "d8c32880-2388-543b-8c61-d9f865259254"
+Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
+Latexify = "23fbe1c1-3f47-55db-b15f-69d7ec21a316"
+OhMyREPL = "5fb14364-9ced-5910-84b2-373655c76a03"
+PrecompileTools = "aea7be01-6a6a-4083-8856-8a6e6704d82a"
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+Reexport = "189a3867-3050-52da-a836-e630ba90ab69"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+TerminalPager = "0c614874-6106-40ed-a7c2-2f1cd0bff883"
