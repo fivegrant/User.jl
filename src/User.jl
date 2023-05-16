@@ -1,8 +1,12 @@
 module User
 
+include("./Macros.jl")
+
+
 function __init__()
     atreplinit() do repl
     @eval begin
+        import Pkg
         using OhMyRepl
         colorscheme!("GruvboxDark")
         using CodeTracking,
@@ -17,6 +21,7 @@ function __init__()
               ProgressMeter,
               Revise,
               TerminalPager
+        using Macros
     end
     end
 end
