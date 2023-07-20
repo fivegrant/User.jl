@@ -3,13 +3,9 @@ module REPLBuild
 import PackageCompiler: create_sysimage
 export compile
 
-function gen_precompile(#modules::AbstractArray, 
-    extra_statements::AbstractArray{Expr} = [])
-    #installs = [:(Pkg.add($name)) for name in modules]
-    #imports = [:(using $(Symbol(name))) for name in modules]
-    startup = Expr(:block, 
-        #:(using Pkg), installs..., imports..., 
-    extra_statements...)
+function gen_precompile(modules::AbstractArray, extra_statements::AbstractArray{Expr} = [])
+    imports = [:(using $(Symbol(name))) for name in modules]
+    startup = Expr(:block, :(using Pkg), imports..., extra_statements...)
     filehandle = tempname()
     write(filehandle, string(startup))
     filehandle
