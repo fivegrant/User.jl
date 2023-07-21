@@ -26,7 +26,7 @@ function compile(modules, execution=[], statements=[], filehandle="sysimage.so")
     create_sysimage(
         modules; 
         sysimage_path=filehandle, 
-        precompile_execution_file=gen_precompile(execution), 
+        precompile_execution_file=gen_precompile(modules, execution), 
         precompile_statements_file=gen_startup(modules, statements)
     )
 end
