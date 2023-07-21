@@ -5,7 +5,7 @@ export compile
 
 function gen_precompile(modules::AbstractArray, extra_statements::AbstractArray{Expr} = [])
     imports = [:(using $(Symbol(name))) for name in modules]
-    startup = Expr(:block, :(using Pkg), imports..., extra_statements...)
+    startup = Expr(:block, imports..., :(1+1), extra_statements...)
     filehandle = tempname()
     write(filehandle, string(startup))
     filehandle
@@ -14,7 +14,7 @@ end
 
 function gen_startup(modules::AbstractArray, extra_statements::AbstractArray = [])
     imports = [:(using $(Symbol(name))) for name in modules]
-    startup = Expr(:block, :(using Pkg), imports..., extra_statements...)
+    startup = Expr(:block, imports..., extra_statements...)
     filehandle = tempname()
     write(filehandle, string(startup))
     filehandle
